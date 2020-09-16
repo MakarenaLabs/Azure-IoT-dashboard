@@ -1,0 +1,12 @@
+<div class="chart-container">
+  <div class="card-icon-mini">
+    <img [src]="icon" [alt]="label">
+  </div>
+  <canvas baseChart height="100"
+          [datasets]="data"
+          [labels]="chartLabels"
+          [options]="chartOptions"
+          [legend]="false"
+          [chartType]="'bar'">
+  </canvas>
+</div>

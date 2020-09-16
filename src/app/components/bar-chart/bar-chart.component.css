@@ -1,0 +1,20 @@
+.chart-container {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  overflow: visible;
+}
+
+canvas {
+  /*width: 100%;*/
+}
+
+.card-icon-mini {
+  position: absolute;
+  left: 0;
+}
+
+img {
+  height: 25px;
+  width: auto;
+}

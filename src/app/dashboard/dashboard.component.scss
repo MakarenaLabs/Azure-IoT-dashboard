@@ -1,0 +1,126 @@
+@import '../../shared/variables';
+
+.cards-container {
+  max-width: 1500px;
+  margin: 10vh auto 50px auto;
+}
+
+.card {
+  border-radius: 20px;
+  border: none;
+  text-align: center;
+  padding: 15px 20px;
+  margin-bottom: 30px;
+  min-height: 255px;
+
+  .card-header {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    text-align: center;
+  }
+
+  .card-icon {
+    display: block;
+
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .card-value {
+    font-size: 40px;
+    line-height: 50px;
+
+    &.small {
+      font-size: 12px;
+    }
+
+    span {
+      font-size: 20px;
+      vertical-align: top;
+      position: relative;
+      top: -7px;
+      min-width: 200px;
+    }
+  }
+
+  .separator {
+    height: 60px;
+
+    &-big {
+      height: 96px;
+    }
+
+    &-small {
+      height: 25px;
+    }
+  }
+}
+
+.card-blue {
+  background-color: $blue;
+}
+.card-green {
+  background-color: $green;
+}
+.card-teal {
+  background-color: $teal;
+}
+.card-violet {
+  background-color: $violet;
+}
+
+.toggle-switch {
+  height: 36px;
+  width: 70px;
+  display: inline-block;
+  position: relative;
+
+  input {
+    display: none;
+    &:checked + .slider {
+      background-color: $green;
+    }
+    &:checked + .slider::after {
+      -webkit-transform: translateX(34px);
+      -ms-transform: translateX(34px);
+      transform: translateX(34px);
+    }
+  }
+  .slider {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $red;
+    border-radius: 30px;
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: 28px;
+      width: 28px;
+      background-color: white;
+      left: 4px;
+      bottom: 4px;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  }
+}
+
+app-bar-chart {
+  overflow: visible;
+}
+

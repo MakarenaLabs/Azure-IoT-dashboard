@@ -1,0 +1,6 @@
+{
+  "eventConnectionString": "Endpoint=sb://ihsuprodamres019dednamespace.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=aMAtWHIITXjgS0DGIOeFG38wFOMshbLUprSKzaqgBEQ=;EntityPath=iothub-ehub-z7010-3876357-5826ddaa93",
+  "eventEndpoint": "$Default",
+  "cloudToDeviceConnectionString": "HostName=Z7010.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey=fTw2DV4CniY+M+d0iuSmn3OkXZfZDKAH77CyQic2j68=",
+  "deviceId": "Z7010-board1"
+}

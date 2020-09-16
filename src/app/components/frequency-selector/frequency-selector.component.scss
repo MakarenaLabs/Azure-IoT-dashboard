@@ -1,0 +1,24 @@
+@import '../../../shared/variables';
+
+select {
+  max-width: 350px;
+  display: inline-block;
+  background-color: $green;
+  border: 1px solid $green;
+  border-radius: 30px;
+  color: white;
+  margin-left: 60px;
+}
+
+option {
+  border: none;
+}
+
+.selector-container {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+app-spinner {
+  position: absolute;
+}

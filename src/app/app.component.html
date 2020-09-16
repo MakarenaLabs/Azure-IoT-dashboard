@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="oblique-background"></div>
+  <h1><strong>Azure</strong> IoT Demo</h1>
+  <h2>
+    <span>{{ deviceId }} Board <app-connection-status [connected]="connected"></app-connection-status></span>
+  </h2>
+
+  <router-outlet></router-outlet>
+
+  <div class="bottom-logos">
+    <img src="/assets/xilinx-logo.png" alt="Xilinx logo"> <img src="/assets/makarenalabs-logo.png"
+                                                               class="white-background" alt="MakarenaLabs logo"> <img
+    src="/assets/azure-logo.png" alt="Microsoft Azure logo">
+  </div>
+</div>

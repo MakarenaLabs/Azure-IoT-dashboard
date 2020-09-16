@@ -1,0 +1,7 @@
+<div class="selector-container">
+  <app-spinner *ngIf="loading"></app-spinner>
+  <select [(ngModel)]="frequency" class="form-control" (ngModelChange)="update()">
+    <option [ngValue]="null">- Messages frequency (in seconds) -</option>
+    <option *ngFor="let option of frequencyOptions" [ngValue]="option">Update every {{ option }} s</option>
+  </select>
+</div>

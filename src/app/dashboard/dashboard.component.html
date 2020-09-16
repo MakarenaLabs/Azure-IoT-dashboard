@@ -1,0 +1,174 @@
+<div class="cards-container">
+  <div class="text-right">
+    <app-frequency-selector [frequency]="updateFrequency.value" (frequencyUpdated)="updateMessageFrequency($event)" [loading]="updateFrequency.loading"></app-frequency-selector>
+  </div>
+  <div class="row">
+    <div class="col-xl-8">
+      <div class="row">
+        <div class="col-xl-4 col-sm-6">
+          <div class="card card-blue">
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="/assets/temperature.png" alt="Temperature">
+              </div>
+              <div class="card-title">
+                Temperature
+              </div>
+            </div>
+            <div class="card-value">
+              {{ data.temp1 | number:"1.2-2" }}<span>°C</span>
+            </div>
+            <div class="separator"></div>
+
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="/assets/humidity.png" alt="Humidity">
+              </div>
+              <div class="card-title">
+                Humidity
+              </div>
+            </div>
+            <div class="card-value">
+              {{ data.hum | number:"1.2-2" }}<span>%</span>
+            </div>
+          </div>
+          <div class="card card-blue">
+            <app-bar-chart icon="/assets/temperature.png" label="Temperature" [value]="data.temp1"></app-bar-chart>
+            <div class="separator separator-small"></div>
+            <app-bar-chart icon="/assets/humidity.png" label="Humidity" [value]="data.hum"></app-bar-chart>
+          </div>
+        </div>
+        <div class="col-xl-4 col-sm-6">
+          <div class="card card-green">
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="/assets/pressure.png" alt="Pressure">
+              </div>
+              <div class="card-title">
+                Pressure
+              </div>
+            </div>
+            <div class="card-value">
+              {{ data.pressure | number:"1.2-2" }}<span>hPa</span>
+            </div>
+            <div class="separator"></div>
+
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="/assets/magnetometer.png" alt="Magnetometer">
+              </div>
+              <div class="card-title">
+                Magnetometer
+              </div>
+            </div>
+            <div class="card-value small">
+              {{ data.magneto | json }}<span>T</span>
+            </div>
+          </div>
+          <div class="card card-green">
+            <app-bar-chart icon="/assets/pressure.png" label="Pressure" [value]="data.pressure"></app-bar-chart>
+            <div class="separator separator-small"></div>
+            <!--<app-bar-chart icon="/assets/magnetometer.png" label="Magnetometer" [value]="data.magneto"></app-bar-chart>-->
+          </div>
+        </div>
+        <div class="col-xl-4 col-sm-6">
+          <div class="card card-teal">
+            <div class="card-header">
+              <div class="card-icon">
+                <img src="/assets/bluetooth.png" alt="Bluetooth">
+              </div>
+              <div class="card-title">
+                Bluetooth
+              </div>
+            </div>
+            <div class="card-value">
+              -<span></span>
+            </div>
+            <div class="separator"></div>
+
+            <div class="card-icon">
+              <img src="/assets/acceleration.png" alt="Acceleration">
+            </div>
+            <div class="card-title">
+              Acceleration
+            </div>
+            <div class="card-value small">
+              {{ data.accel1 | json }}<span>rad/s<sup>2</sup></span>
+            </div>
+          </div>
+          <div class="card card-teal">
+            <!--<app-bar-chart icon="/assets/acceleration.png" label="Acceleration" [value]="data.accel1"></app-bar-chart>-->
+            <div class="separator separator-small"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card card-violet">
+            <div class="row">
+              <div class="col-3 text-left">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <img src="/assets/modbus.png" alt="Modbus">
+                  </div>
+                  <div class="card-title">
+                    Modbus
+                  </div>
+                </div>
+              </div>
+              <div class="col-9 text-right">
+                <div class="card-value">
+                  {{ data.temp2 | number:"1.2-2" }} <span>°C</span>
+                </div>
+              </div>
+            </div>
+            <div class="separator separator-big"></div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="relays-container">
+                  <div class="row text-left">
+                    <div class="col-3">
+                      <label class="toggle-switch">
+                        <input type="checkbox" [(ngModel)]="relay1.value" (change)="changeRelayState(relay1)">
+                        <div class="slider"></div>
+                      </label>
+                      <app-relay-state label="Relay 1" [state]="relay1.value" [loading]="relay1.loading"></app-relay-state>
+                    </div>
+                    <div class="col-3">
+                      <label class="toggle-switch">
+                        <input type="checkbox" [(ngModel)]="relay2.value" (change)="changeRelayState(relay2)">
+                        <div class="slider"></div>
+                      </label>
+                      <app-relay-state label="Relay 2" [state]="relay2.value" [loading]="relay2.loading"></app-relay-state>
+                    </div>
+                    <div class="col-3">
+                      <label class="toggle-switch">
+                        <input type="checkbox" [(ngModel)]="relay3.value" (change)="changeRelayState(relay3)">
+                        <div class="slider"></div>
+                      </label>
+                      <app-relay-state label="Relay 3" [state]="relay3.value" [loading]="relay3.loading"></app-relay-state>
+                    </div>
+                    <div class="col-3">
+                      <label class="toggle-switch">
+                        <input type="checkbox" [(ngModel)]="relay4.value" (change)="changeRelayState(relay4)">
+                        <div class="slider"></div>
+                      </label>
+                      <app-relay-state label="Relay 4" [state]="relay4.value" [loading]="relay4.loading"></app-relay-state>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card-violet">
+            <app-bar-chart icon="/assets/temperature.png" label="Temperature (Modbus)" [value]="data.temp2"></app-bar-chart>
+            <div class="separator separator-small"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

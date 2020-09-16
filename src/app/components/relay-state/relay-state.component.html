@@ -1,0 +1,6 @@
+<div class="relay-label">{{ label }}</div>
+<div class="relay-state" *ngIf="!loading" [ngClass]="{on: state, off: !state}">
+  <span [hidden]="!state">ON</span>
+  <span [hidden]="state">OFF</span>
+</div>
+<app-spinner *ngIf="loading"></app-spinner>

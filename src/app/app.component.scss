@@ -1,0 +1,60 @@
+@import '../shared/variables';
+
+.oblique-background {
+  background-color: #000;
+  width: 150%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transform: rotate(32deg);
+  transform-origin: left top;
+  z-index: -1;
+}
+
+h1 {
+  font-weight: 400;
+  padding-bottom: 0px;
+  margin-top: 5vh;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.bottom-logos {
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  img {
+    margin: 0 3px;
+  }
+
+  @media(max-height: 850px) {
+    position: relative;
+  }
+}
+
+.white-background {
+  background-color: white;
+  padding: 3px;
+}
+
+h2 span {
+  position: relative;
+  display: inline-block;
+  min-width: 200px;
+}
+
+app-connection-status {
+  position: absolute;
+  bottom: -30px;
+  right: -50px;
+}
